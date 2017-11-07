@@ -5,12 +5,38 @@ var controller = Botkit.slackbot({
 });
 
 var bot = controller.spawn({
-    token: 'xoxb-267225294432-kqqEg4ASF3Q6QdRxPb6SduQv'
+    token: 'xoxb-267225294432-c03DQvGJtG5gkvwJEQmH7Vz6'
 }).startRTM();
 
 
 controller.hears(['ramal', 'ramais'], 'direct_message,direct_mention,mention', function(bot, message) {
-    var helloText = "Olá, Alexandre[225] " + ",  Carol[200]" + "  DanielCoutinho[240],    DanielPedrotti[231],   Deyvid[215],     Diogo[222],     Franklin[242],      Germano[218],   Gustavo[233],    Kelvin[230],       Langa[221],      Marcel[212],     Marcelo[210],    Márcio[217],      Marli[201],      Rafael[216],      RafaMelo[239],      Rica[226],      Richard[214],     Sandro[202],     Sérgio[228]";
+    var responseText = "Olá, veja minhas anotações dos ramais: \n " +
+    " Alexandre [225] \n" +
+    " Carol [200] \n" +
+    " Daniel Coutinho [240] \n" +
+    " Daniel Pedrotti [231] \n" +
+    " Deyvid [215] \n" +
+    " Diogo [222] \n" +
+    " Franklin [242] \n" +
+    " Germano [218] \n" +
+    " Gustavo [233] \n" +
+    " Kelvin [230] \n" +
+    " Langa [221] \n" +
+    " Marcel [212] \n" +
+    " Marcelo [210] \n" +
+    " Márcio [217] \n" +
+    " Marli [201] \n" +
+    " Rafael [216] \n" +
+    " Rafa Melo [239] \n" +
+    " Rica [226] \n" +
+    " Richard [214] \n" +
+    " Sandro [202] \n" +
+    " Sérgio [228] \n";
 
-    bot.reply(message, helloText);
+    bot.reply(message, responseText);
+});
+
+controller.hears(['Olá', 'Oi'], 'direct_message,direct_mention,mention', function(bot, message) {
+    var responseText = "Olá, meu nome é Andrewn e estou as suas ordens!";
+    bot.reply(message, responseText);
 });
